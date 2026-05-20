@@ -251,22 +251,7 @@ nav ul a:hover {
     background-color: #4e8f63;
 }
 
-.about,
-.skills,
-.projects,
-.contact {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
-}
 
-.about.visible,
-.skills.visible,
-.projects.visible,
-.contact.visible {
-    opacity: 1;
-    transform: translateY(0);
-}
 
 .avatar {
   width: 300px;
@@ -359,4 +344,89 @@ footer p {
 .top-btn:hover {
   background-color: #b05e74;
   transform: translateY(-3px);
+}
+
+.artwork-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.artwork {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(201, 118, 138, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.artwork:hover {
+  transform: scale(1.05);
+}
+
+.artwork:nth-child(even) {
+  box-shadow: 0 4px 15px rgba(106, 171, 126, 0.2);
+}
+
+.gallery-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  z-index: 9999;
+  overflow-y: auto;
+}
+
+.gallery-content {
+  background: #fff5f7;
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  border-radius: 20px;
+  position: relative;
+}
+
+.gallery-content h2 {
+  font-family: 'Playfair Display', serif;
+  color: #c9768a;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #c9768a;
+}
+
+.artwork-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.artwork {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(201, 118, 138, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  background-color: #f5f0eb;
+}
+
+.artwork:hover {
+  transform: scale(1.05);
 }

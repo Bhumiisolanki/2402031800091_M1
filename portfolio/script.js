@@ -25,3 +25,11 @@ const observer = new IntersectionObserver((entries) => {
 document.querySelectorAll('.about, .skills, .projects, .contact').forEach(el => {
   observer.observe(el);
 });
+
+function openGallery() {
+  document.getElementById('galleryModal').style.display = 'block';
+}
+
+function closeGallery() {
+  document.getElementById('galleryModal').style.display = 'none';
+}
