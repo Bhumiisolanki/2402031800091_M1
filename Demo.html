@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Simple Page</title>
+  </head>
+  <body>
+    <h2>JQuery Demo Page</h2>
+
+    <p id="P1">This is paragraph one. Lorem ipsum dolor sit amet.</p>
+    <p id="P2">This is paragraph two. Hello from the second paragraph.</p>
+    <p id="P3">This is paragraph three.Hello from paragraph three</p>
+    <p id="P4">This is paragraph four.Hello from paragraph four.</p>
+    <p id="P5">This is paragraph five. Hello from paragraph five!</p>
+    <br />
+
+    <input type="text" id="myInput" placeholder="Type something here..." />
+    <button id="btn">Click Me</button>
+    <p id="msg"></p>
+
+    <p id="newPara">This is a new paragraph.</p>
+    <button id="btn1">Hide</button>
+    <button id="btn2">Show</button>
+    <button id="btn3">Toggle</button>
+    <button id="btn4">FadeIn</button>
+    <button id="btn5">FadeOut</button>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <div class="question"><span class="icon">+</span> What is jQuery?</div>
+      <div class="answer" style="display:none;">jQuery is a fast and simple JavaScript library.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question"><span class="icon">+</span> Why do we use jQuery?</div>
+      <div class="answer" style="display:none;">We use jQuery to simplify HTML, CSS and JavaScript tasks.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question"><span class="icon">+</span> Is jQuery easy to learn?</div>
+      <div class="answer" style="display:none;">Yes! jQuery is very beginner friendly and easy to learn.</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+      $("#btn").click(function () {
+        var value = $("#myInput").val();
+        $("#msg").html("<b>Your name is </b>" + value);
+      });
+
+      $("#P1").css({
+        color: "blue",
+        "background-color": "lightgray",
+      });
+
+      $("#btn1").click(function () {
+        $("#newPara").hide();
+      });
+
+      $("#btn2").click(function () {
+        $("#newPara").show();
+      });
+
+      $("#btn3").click(function () {
+        $("#newPara").toggle();
+      });
+
+      $("#btn4").click(function () {
+        $("#newPara").fadeIn(500);
+      });
+
+      $("#btn5").click(function () {
+        $("#newPara").fadeOut(1000);
+      });
+
+      $(".question").click(function () {
+        $(this).next(".answer").slideToggle(300);
+        var icon = $(this).find(".icon");
+        if (icon.text() === "+") {
+          icon.text("-");
+        } else {
+          icon.text("+");
+        }
+      });
+    </script>
+  </body>
+</html>

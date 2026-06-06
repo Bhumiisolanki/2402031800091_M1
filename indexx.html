@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Basics</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <style>
+    body { font-family: sans-serif; padding: 2rem; }
+    button { padding: 8px 16px; margin: 5px; cursor: pointer; }
+    #box {
+      width: 100px; height: 100px;
+      background: purple;
+      margin: 20px 0;
+    }
+    #message { font-size: 18px; margin: 10px 0; }
+  </style>
+</head>
+<body>
+
+  <h2>jQuery Demo</h2>
+
+  <p id="message">Hello!</p>
+  <div id="box"></div>
+
+  <button id="btn1">Change Text</button>
+  <button id="btn2">Hide Box</button>
+  <button id="btn3">Show Box</button>
+  <button id="btn4">Change Color</button>
+
+  <script>
+    $(function() {
+
+      $('#btn1').click(function() {
+        $('#message').text('Text changed by jQuery!');
+      });
+
+      $('#btn2').click(function() {
+        $('#box').hide();
+      });
+
+      $('#btn3').click(function() {
+        $('#box').show();
+      });
+
+      $('#btn4').click(function() {
+        $('#box').css('background', 'tomato');
+      });
+
+    });
+  </script>
+
+</body>
+</html>
